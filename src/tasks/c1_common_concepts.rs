@@ -46,10 +46,10 @@ pub fn square(num: u32) -> u32 {
 // Write a recursive function `factorial` that computes the factorial of a number (n!) as `u32`.
 
 pub fn factorial(num: u32) -> u32 {
-    if (num == 0) {
+    if num == 0 {
         1
     } else {
-        num * factorial(num)
+        num * factorial(num - 1)
     }
 }
 
