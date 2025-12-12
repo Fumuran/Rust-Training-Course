@@ -78,7 +78,7 @@ pub fn find_biggest_number(some_array: [u32; 5]) -> u32 {
     let mut max = some_array[0];
     for &num in some_array.iter() {
         if num > max {
-            max = num
+            max = num;
         }
     }
     max
