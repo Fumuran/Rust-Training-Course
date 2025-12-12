@@ -9,7 +9,10 @@
 // it to 10, and prints both values.
 #[allow(dead_code)]
 pub fn simple_mutability() {
-    unimplemented!()
+    let mut num = 5;
+    println!("First value: {}", num);
+    num = 10;
+    println!("Second value: {}", num);
 }
 
 // DATA TYPES
@@ -20,7 +23,11 @@ pub fn simple_mutability() {
 // them.
 #[allow(dead_code)]
 pub fn simple_data_types() {
-    unimplemented!()
+    let i32: i32 = 1;
+    let f64: f64 = 1.5;
+    let bool: bool = true;
+    let char: char = 'a';
+    println!("All variables: i32 = {}, f64 = {}, bool = {}, char = {}", i32, f64, bool, char)
 }
 
 // FUNCTIONS
@@ -29,10 +36,22 @@ pub fn simple_data_types() {
 // ----- 3 --------------------------------------
 // Write a function `square` that takes a `u32` integer and returns its square as `u32`.
 
+pub fn square(num: u32) -> u32 {
+    num * num
+}
+
 // IMPLEMENT HERE:
 
 // ----- 4 --------------------------------------
 // Write a recursive function `factorial` that computes the factorial of a number (n!) as `u32`.
+
+pub fn factorial(num: u32) -> u32 {
+    if (num == 0) {
+        1
+    } else {
+        num * factorial(num)
+    }
+}
 
 // IMPLEMENT HERE:
 
@@ -43,12 +62,24 @@ pub fn simple_data_types() {
 // Write a program that prints whether a provided signed integer number is positive, negative, or
 // zero using `if` statement.
 pub fn sign_checker(number: i32) -> &'static str {
-    unimplemented!()
+    if number == 0 {
+        "zero"
+    } else if number > 0 {
+        "positive"
+    } else {
+        "negative"
+    }
 }
 
 // ----- 6 --------------------------------------
 // Write a program that finds the largest number in an array of 5 integers using a for or while
 // loop.
 pub fn find_biggest_number(some_array: [u32; 5]) -> u32 {
-    unimplemented!()
+    let mut max = some_array[0];
+    for &num in some_array.iter() {
+        if num > max {
+            max = num
+        }
+    }
+    max
 }
